@@ -1,0 +1,45 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+/* font-family: 'Nanum Brush Script', cursive;
+font-family: 'Nanum Gothic', sans-serif; */
+
+
+/* 💙레이아웃 */
+body{background: url(../img/milky-way-bg.jpg) repeat-x center top;}
+#header {height: 327px;}
+
+/* container */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* 💛header */
+.header {}
+.header .header_menu {
+    text-align: right;
+}
+.header .header_menu a {
+    color: #fff;
+    display: inline-block;
+    padding: 8px 0 0 10px;
+}
+.header .header_menu a:hover {
+    color: #ccc;
+}
+
+.header .header_tit {
+    text-align: center;
+}
+.header .header_tit h1 {
+    color: #fff;
+    display: inline-block; /* 포지션absolute로도 잡을 수 있음 */
+    padding: 5px 30px;
+    background-color: #a358b6;
+}
+.header .header_tit a {
+    color: #fff;
+}
