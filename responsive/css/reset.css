@@ -7,6 +7,9 @@ fieldset, p, button,figcaption, figure {
     margin: 0; padding: 0;
 }
 
+/* 불릿기호 초기화 */
+ul, li, ol {list-style: none;}
+
 /* 링크초기화 */
 a {color: #222; text-decoration: none;}
 a:hover {color: #2698cb;}
@@ -48,7 +51,7 @@ img {width: 100%;}
 /* 버튼 초기화 */
 button {border: 0;}
 
-.clrearfix {
+.clearfix::after {
     content: '';
     display: block;
     clear: both;

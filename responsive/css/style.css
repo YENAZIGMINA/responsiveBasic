@@ -1,15 +1,21 @@
 @charset "UTF-8";
-*{margin: 0; padding: 0;}
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Nanum+Brush+Script&family=Nanum+Gothic:wght@400;700;800&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nanum+Gothic:wght@400;700;800&display=swap');
-
-/* font-family: 'Nanum Brush Script', cursive;
-font-family: 'Nanum Gothic', sans-serif; */
+/* font-family: 'Abel', sans-serif;
+font-family: 'Nanum Brush Script', cursive;
+font-family: 'Nanum Gothic', sans-serif; 
+*/
 
 
 /* 💙레이아웃 */
-body{background: url(../img/milky-way-bg.jpg) repeat-x center top;}
+body {
+    background: url(../img/milky-way-bg.jpg) repeat-x center top;
+    background-size: 100% 327px;
+}
 #header {height: 327px;}
+#nav {background-color: #f6fdff;}
+#title {background-color: #eaf7fd;}
+
 
 /* container */
 .container {
@@ -19,27 +25,174 @@ body{background: url(../img/milky-way-bg.jpg) repeat-x center top;}
 
 /* 💛header */
 .header {}
+
 .header .header_menu {
     text-align: right;
 }
+
 .header .header_menu a {
     color: #fff;
     display: inline-block;
     padding: 8px 0 0 10px;
 }
+
 .header .header_menu a:hover {
     color: #ccc;
 }
 
 .header .header_tit {
     text-align: center;
+    font-family: 'Abel', sans-serif;
+    text-transform: uppercase;
 }
+
 .header .header_tit h1 {
     color: #fff;
-    display: inline-block; /* 포지션absolute로도 잡을 수 있음 */
+    display: inline-block;
+    /* 포지션absolute로도 잡을 수 있음 */
     padding: 5px 30px;
-    background-color: #a358b6;
+    background-color: rgb(45, 182, 180);
+    letter-spacing: 2px;
+    margin-top: 55px;
+    font-weight: 800;
+    transition: 0.3s ease-in-out; /* ease-in-out 처음과 끝을 부드럽게 */
 }
+.header .header_tit h1:hover{
+    box-shadow: inset 135px 0px 20px #258fac, 
+                inset -135px 0px 20px #258fac;
+}
+
 .header .header_tit a {
     color: #fff;
+    background-color: #4a9adf;
+    display: inline-block;
+    padding: 5px 20px;
+    margin-top: -7px;
+    transition: 0.3s ease-in-out;
 }
+.header .header_tit a:hover{
+    box-shadow: inset 75px 0px rgba(58, 128, 161, 0.9), 
+                inset -75px 0px rgba(58, 128, 161,0.9);
+}
+
+.header .header_icon {
+    text-align: center;
+    margin-top: 10px;
+}
+.header .header_icon ul {}
+.header .header_icon ul li {
+    display: inline;
+    margin-left: 5px;
+}
+.header .header_icon ul li a {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-size: 35px;
+    width: 60px; height: 60px;
+    background-color: #3192bf;
+    border-radius: 50%;
+    line-height: 60px;
+    margin-top: 40px;
+}
+.header .header_icon ul li a i {}
+.header .header_icon ul li a span {
+    position: absolute;
+    top: -40px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    background-color: #3192bf;
+    line-height: 1.2;
+    padding: 3px 9px;
+    border-radius: 6px 0;
+    transition: 0.3s;
+    opacity: 0;
+}
+.header .header_icon ul li:hover a span {
+    top: -30px;
+    opacity: 1;
+}
+.header .header_icon ul li a span::before {
+    content: '';
+    position: absolute;
+    bottom: -9px; left: 42%;
+    /* width: 5px; height: 5px;
+    background-color: red; 
+    => 먼저 이값을 줘서 영역확인하고, border값으로 뾰족한 모양만든 후
+       위 값은 삭제 */
+    border: 5px solid #3192bf;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+
+
+/* 💛nav 전체메뉴 */
+.nav {
+    display: none;
+    padding: 25px 0;
+}
+.nav>div {
+    float: left;
+    width: 40%;
+}
+.nav>div:last-child {width: 20%;}
+.nav>div h3 {
+    font-size: 18px;
+    color: #25a2d0;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+.nav>div ul {overflow: hidden;}
+.nav>div ul li {
+    position: relative;
+    float: left;
+    width: 50%;
+    padding-left: 8px;
+    box-sizing: border-box;
+}
+.nav>div:last-child ul li{width: 100%;}
+.nav>div ul li::before {
+    content: '';
+    width: 3px; height: 3px;
+    background-color: #25a2d0;
+    position: absolute;
+    top: 9px; left: 0;
+}
+nav>div ul li a {
+    position: relative;
+}
+nav>div ul li a::after {
+    content: '';
+    height: 2px; width: 0px;
+    background-color: #25a2d0;
+    position: absolute;
+    bottom: 0; left: 0;
+    transition: 0.3s;
+}
+nav>div ul li a:hover::after {
+    width: 150px;
+}
+
+/* 💛title */
+#title {
+    text-align: center;
+    position: relative;
+    padding: 5px 0;
+}
+#title h2 {
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 39px;
+    color: #0093bd;
+}
+#title .btn {
+    position: absolute;
+    top: 5px; right: 0;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background-color: #3192bf;
+    color: #fff;
+    font-size: 35px;
+    line-height: 60px;
+}
+#title .btn i {}
