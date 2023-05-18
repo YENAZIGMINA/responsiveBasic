@@ -15,6 +15,31 @@ body {
 #header {height: 327px;}
 #nav {background-color: #f6fdff;}
 #title {background-color: #eaf7fd;}
+main {}
+
+
+/* 💙contents 레이아웃 */
+#contents {}
+#contents .container {
+    border-left: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+    box-sizing: border-box;
+}
+#contents #cont_left{
+    float: left;
+    width: 250px;
+}
+#contents #cont_center{
+    float: left;
+    width: calc(100% - 500px);
+    border-left: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+    box-sizing: border-box;
+}
+#contents #cont_right{
+    float: left;
+    width: 250px;
+}
 
 
 /* container */
@@ -196,3 +221,146 @@ nav>div ul li a:hover::after {
     line-height: 60px;
 }
 #title .btn i {}
+
+
+/* 💛main */
+/* #contents */
+.column {
+    padding: 15px;
+    border-bottom: 1px solid #dbdbdb;
+}
+.column .col_tit {
+    font-size: 20px;
+    color: #2f7fa6;
+    padding: 5px;
+}
+.column .col_desc {
+    color: #878787;
+    border-bottom: 1px dashed #dbdbdb;
+    padding-bottom: 15px; margin-bottom: 15px;
+}
+
+.column.col3 {
+    border-bottom: none;
+}
+.column.col6 {
+    border-bottom: none;
+}
+.column.col9 {
+    border-bottom: none;
+}
+
+/* menu */
+.menu {}
+.menu ul {}
+.menu ul li {}
+.menu ul li a {
+    position: relative;
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    color: #878787;
+    text-transform: uppercase;
+    border-bottom: 1px solid #dbdbdb;
+    transition: .5s;
+}
+.menu ul li a:hover {
+    background-color: rgba(26,130,174,0.9);
+    color: #fff;
+    box-shadow: inset 190px 0px 15px rgba(36,130,170,0.7);
+}
+.menu ul li a i {
+    position: absolute;
+    top: 15px; right: 10px;
+}
+
+/* col4. 이미지 슬라이드 (슬릭) */
+/* ❗슬릭을 여러개 가져올 수 있으니 꼭 부모태그 작성 */
+.slider {}
+.slider div {}
+.slider div figure {
+    position: relative;
+}
+.slider div figure img {}
+.slider div figure figcaption {
+    position: absolute;
+    bottom: 0; left: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: rgba(0,0,0,0.5);
+    font-size: 18px;
+    width: 100%;
+}
+.slider div figure figcaption em {
+    font-family: 'Abel', sans-serif;
+}
+.slider div figure figcaption span {
+    display: block; /* 글자만큼만 영역잡히는데 부모에서 w100% 잡아주기 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+.slider .slick-arrow {
+    position: absolute;
+    /* top: 50%; left: 0; */
+    transform: translateY(-50%);
+    z-index: 30; /* prev깔려있는데 list(이미지)보다 형이므로 깔려서 */
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    /* 2) 폰트어썸 개발자모드에서 i 잡고 폰트패밀리,폰트웨이트 복붙 후 
+          Pro-> Free로 수정*/
+    font-size: 0; /* 3) 폰트어썸만살리기(글자없애기) */
+    visibility: hidden; /* 4)뒷 배경 없애기 */
+    color: #fff;
+}
+.slider .slick-prev {
+    top: 50%; left: 0;
+}
+.slider .slick-prev::before {
+    content: '\f060'; /* 1)폰트어썸 개발자모드로 짚어서 컨텐츠내용 복붙 */
+    font-size: 30px; /* 폰트어썸만살리기(글자없애기) */
+    visibility: visible; /* 뒷 배경 없애기 */
+}
+.slider .slick-next {
+    top: 50%; right: 0;
+}
+.slider .slick-next::before{
+    content: '\f061';
+    font-size: 30px; /* 폰트어썸만살리기(글자없애기) */
+    visibility: visible; /* 뒷 배경 없애기 */
+}
+
+
+
+
+
+
+/* 💛반응형 미디어쿼리 */
+
+@media (max-width:1220px){
+    .container {width: 100%;} /* 반응형일때 %로 값을 잡아야 함 */
+    .row {padding: 0 15px;}
+    .header .header_menu {padding-right: 15px;}
+    #title .btn {right: 5px;}
+}
+@media (max-width:1024px){}
+@media (max-width:960px){
+    .nav>div {float: none; width: 100%;}
+    .nav>div:last-child {width: 100%;}
+    .nav>div ul li {width: 33.3333%;}
+    .nav>div:last-child ul li {width: 33.3333%;}
+    .nav>div h3 {margin-top: 12px;}
+}
+@media (max-width:768px){}
+@media (max-width:600px){
+    #header {height: auto;} /* auto로 하면 자식이 가진 값만큼 가짐 */
+    .header .header_tit {display: none;}
+    .header .header_icon {display: none;}
+    #title .btn {display: none;}
+}
+@media (max-width:480px){}
+@media (max-width:320px){}
