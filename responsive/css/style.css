@@ -294,12 +294,27 @@ nav>div ul li a:hover::after {
 }
 .slider div figure figcaption em {
     font-family: 'Abel', sans-serif;
+    opacity: 0;
+    transition: 0.9s 0.2s; /* 애니메이션시간, 지연시간 */
+    transform: translateX(50px); display: block;
+}
+.slider div.slick-active figure figcaption em {
+    opacity: 1;
+    transform: translateX(0px); /* 같은말 transform: none; */
 }
 .slider div figure figcaption span {
-    display: block; /* 글자만큼만 영역잡히는데 부모에서 w100% 잡아주기 */
+    display: block; 
+    /* 글자만큼만 영역잡히는데 부모에서 w100% 잡아주기 */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: 0.9s 0.4s;
+}
+.slider div.slick-active figure figcaption span {
+    opacity: 1;
+    transform: translateX(0px);
 }
 
 
@@ -307,32 +322,141 @@ nav>div ul li a:hover::after {
 .slider .slick-arrow {
     position: absolute;
     /* top: 50%; left: 0; */
-    transform: translateY(-50%);
     z-index: 30; /* prev깔려있는데 list(이미지)보다 형이므로 깔려서 */
     font-family: "Font Awesome 5 Free"; 
     font-weight: 900;
     /* 2) 폰트어썸 개발자모드에서 i 잡고 폰트패밀리,폰트웨이트 복붙 후 
-          Pro-> Free로 수정*/
+          **Pro-> Free**로 수정*/
     font-size: 0; /* 3) 폰트어썸만살리기(글자없애기) */
     visibility: hidden; /* 4)뒷 배경 없애기 */
-    color: #fff;
+    color: #5dbfeb;
+    bottom: -5px;
 }
 .slider .slick-prev {
-    top: 50%; left: 0;
+    left: 5px;
 }
 .slider .slick-prev::before {
     content: '\f060'; /* 1)폰트어썸 개발자모드로 짚어서 컨텐츠내용 복붙 */
-    font-size: 30px; /* 폰트어썸만살리기(글자없애기) */
+    font-size: 22px; /* 폰트어썸만살리기(글자없애기) */
     visibility: visible; /* 뒷 배경 없애기 */
 }
 .slider .slick-next {
-    top: 50%; right: 0;
+    right: 5px;
 }
 .slider .slick-next::before{
     content: '\f061';
-    font-size: 30px; /* 폰트어썸만살리기(글자없애기) */
+    font-size:22px; /* 폰트어썸만살리기(글자없애기) */
     visibility: visible; /* 뒷 배경 없애기 */
 }
+
+.slider .slick-dots {
+    text-align: center;
+}
+.slider .slick-dots li {
+    display: inline-block;
+    margin: 5px;
+}
+.slider .slick-dots li button {
+    font-size: 0;
+    width: 12px; height: 12px;
+    background-color: #5dbfeb;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.slider .slick-dots li.slick-active button {
+    background-color: #2b91c8;
+    width: 25px;
+    border-radius: 10px;
+}
+
+/* col5. 라이트갤러리 */
+.square {}
+.square a {
+    position: relative;
+    float: left;
+    width: 19%;
+    margin: 0.5%;
+    overflow: hidden; /*❗em태그 hover할때 본인영역 말고는 안보이게! */
+}
+.square a img {
+    width: 100%;
+    display: block;
+    /* 이미지속성때문에 공간이 생기는데, ❗처리하기위해 블럭처리 */
+}
+.square a em {
+    position: absolute;
+    bottom: -25px; left: 0;
+    width: 100%;
+    color: #fff;
+    background-color: rgba(0,0,0,0.8);
+    text-align: center;
+    transition: 0.3s;
+}
+.square a:hover em {
+    bottom: 0;
+}
+
+.square a:nth-child(1):hover img {
+    filter: blur(2px);
+}
+.square a:nth-child(2):hover img {
+    filter: brightness(50%); /* 명도 */
+}
+.square a:nth-child(3):hover img {
+    filter: contrast(10%); /* 대비 */
+}
+.square a:nth-child(4):hover img {
+    filter: grayscale(100%); /* 회색,흑백처리 */
+}
+.square a:nth-child(5):hover img {
+    filter: hue-rotate(80deg); /* 색조 */
+}
+.square a:nth-child(6):hover img {
+    filter: invert(100%); /* 반전 */
+}
+.square a:nth-child(7):hover img {
+    filter: opacity(50%); /* 투명도 */
+}
+.square a:nth-child(8):hover img {
+    filter: saturate(200%); /* 채도 */
+}
+.square a:nth-child(9):hover img {
+    filter: sepia(50%); /* 적갈색 */
+}
+.square a:nth-child(10):hover img {
+    filter: sepia(120%) blur(1px); /* 2개 값을 같이 설정 */
+}
+
+/* col6. 비디오 */
+/* ❗❗padding과 margin의 백분율(%)은 상하좌우가 동일하게
+     기준이 "부모의 넓이"를 따라간다! */
+.video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* 높이는 패딩으로 맞춘다:유튜브 영상 비율 16:9이므로 56.25% 
+    / ❗❗기본)패딩은 부모의 넓이를 따라감(백분율)*/
+}
+.video iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+
+/* col7 카드 */
+.card {
+    perspective: 600px;
+    /* 원근감 조절 (최소 600px)그 아래는 너무 화면에 돌출됨 */
+}
+.card .front {
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+    backface-visibility: hidden; /* 뒷면:숨기기 */
+}
+.card .front img {}
+.card .back {}
+.card .back i {}
+
 
 
 

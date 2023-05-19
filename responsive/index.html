@@ -11,10 +11,14 @@
     <title>반응형사이트</title>
     <link rel="shortcut icon" href="https://cdn.pixabay.com/photo/2014/03/25/16/58/building-blocks-297773_960_720.png"
         type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
-    <!-- 폰트어썸 cdn -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" /> <!-- 폰트어썸 cdn -->
+
     <!-- 슬릭 css cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" /> 
+
+    <!-- 3)라이트갤러리 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css" /> <!-- css cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-thumbnail.min.css" /> <!-- 썸네일 css cdn -->
 
 
     <!-- 🧡style -->
@@ -209,25 +213,88 @@
                         </div>
                         <!-- /이미지 슬라이드 -->
                     </article> <!-- col4 end -->
+
                     <article class="column col5">
-                        <h4 class="col_tit">Menu</h4>
-                        <p class="col_desc">Box-shadow를 이용한 마우스오버 효과메뉴입니다.</p>
+                        <h4 class="col_tit">Filter Effect</h4>
+                        <p class="col_desc">light gallery를 이용한 슬라이드 효과입니다.</p>
+                        <!-- 라이트갤러리 (1)lightgallery.js 마크업복붙) -->
+                        <div id="lightgallery" class="square clearfix">
+                            <a href="img/light01_s.jpg">
+                                <img alt="img1" src="img/light01.jpg" />
+                                <em>blur</em>
+                            </a>
+                            <a href="img/light02_s.jpg">
+                                <img alt="img2" src="img/light02.jpg" />
+                                <em>brightness</em>
+                            </a>
+                            <a href="img/light03_s.jpg">
+                                <img alt="img3" src="img/light03.jpg" />
+                                <em>contrast</em>
+                            </a>
+                            <a href="img/light04_s.jpg">
+                                <img alt="img4" src="img/light04.jpg" />
+                                <em>graysacle</em>
+                            </a>
+                            <a href="img/light05_s.jpg">
+                                <img alt="img5" src="img/light05.jpg" />
+                                <em>hue-rotate</em>
+                            </a>
+                            <a href="img/light06_s.jpg">
+                                <img alt="img6" src="img/light06.jpg" />
+                                <em>invert</em>
+                            </a>
+                            <a href="img/light07_s.jpg">
+                                <img alt="img7" src="img/light07.jpg" />
+                                <em>opacity</em>
+                            </a>
+                            <a href="img/light08_s.jpg">
+                                <img alt="img8" src="img/light08.jpg" />
+                                <em>saturate</em>
+                            </a>
+                            <a href="img/light09_s.jpg">
+                                <img alt="img9" src="img/light09.jpg" />
+                                <em>sepia</em>
+                            </a>
+                            <a href="img/light10_s.jpg">
+                                <img alt="img10" src="img/light10.jpg" />
+                                <em>Mix</em>
+                            </a>
+                        </div>
+
+                        <!-- /라이트갤러리 -->
                     </article> <!-- col5 end -->
+
                     <article class="column col6">
-                        <h4 class="col_tit">Menu</h4>
-                        <p class="col_desc">Box-shadow를 이용한 마우스오버 효과메뉴입니다.</p>
+                        <h4 class="col_tit">Video</h4>
+                        <p class="col_desc">영상을 보여주는 영역입니다.</p>
+                        <div class="video"> <!-- 유튜브-공유-퍼가기 -->
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/spiHw2VYbK4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div> <!-- .video end -->
                     </article> <!-- col6 end -->
                 </section> <!-- #cont_center end -->
 
                 <section id="cont_right">
                     <article class="column col7">
-                        <h4 class="col_tit">Menu</h4>
-                        <p class="col_desc">Box-shadow를 이용한 마우스오버 효과메뉴입니다.</p>
+                        <h4 class="col_tit">Effect1</h4>
+                        <p class="col_desc">CSS3의 transform을 이용한 마우스오버 효과메뉴 입니다.</p>
+
+                        <!-- card -->
+                        <div class="card">
+                            <figure class="front">
+                                <img src="img/side1.jpg" alt="사이드1">
+                            </figure>
+                            <div class="back">
+                                <i class="fas fa-dog"></i>
+                            </div> <!-- back end -->
+                        </div> <!-- .card end -->
+                        <!-- /card -->
                     </article> <!-- col7 end -->
+
                     <article class="column col8">
                         <h4 class="col_tit">Menu</h4>
                         <p class="col_desc">Box-shadow를 이용한 마우스오버 효과메뉴입니다.</p>
                     </article> <!-- col8 end -->
+
                     <article class="column col9">
                         <h4 class="col_tit">Menu</h4>
                         <p class="col_desc">Box-shadow를 이용한 마우스오버 효과메뉴입니다.</p>
@@ -240,32 +307,45 @@
 
 
 
+    <!-- 💛제이쿼리/자바스크립트 -->
+    
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> <!-- 코드제이쿼리 cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script> <!-- 슬릭 js cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script> <!-- 3)라이트갤러리 cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script> <!-- 3)라이트갤러리/썸네일 cdn -->
     <script src="main.js"></script>
 
-    <script>
-        //nav
-        $('#title .btn').click(function (e) {
-            e.preventDefault();
-            //$('.nav').padeIn();
-            //$('.nav').slideDown();
-            $('.nav').slideToggle();
-            $('#title .btn').toggleClass("open"); //toggleClass: 슬라이드 클래스명 추가
-            if ($('#title .btn').hasClass("open")) {
-                //A.attr(B) ==> A요소안에 있는 속성B를 가져와라
-                //A.attr(B,C) ==> A요소안에 있는 속성B를 C로 바꾸어라
-                $('#title .btn').find('i').attr("class", "far fa-hand-point-up")
-            } else {
-                $('#title .btn').find('i').attr("class", "far fa-hand-point-down")
-            }
 
-        })
+    <script> /* 2)라이트갤러리 이니셜라이즈 복붙 */
+        lightGallery(document.getElementById('lightgallery'), {
+            plugins: [lgThumbnail],
+        });
+    </script>
 
-        //이미지 슬라이드 (슬릭 이니셜~)
+        <script>
+            //nav
+            $('#title .btn').click(function (e) {
+                e.preventDefault();
+                //$('.nav').fadeIn();
+                //$('.nav').slideDown();
+                $('.nav').slideToggle();
+                $('#title .btn').toggleClass("open"); //toggleClass: 슬라이드 클래스명 추가
+                if ($('#title .btn').hasClass("open")) {
+                    //A.attr(B) ==> A요소안에 있는 속성B를 가져와라
+                    //A.attr(B,C) ==> A요소안에 있는 속성B를 C로 바꾸어라
+                    $('#title .btn').find('i').attr("class", "far fa-hand-point-up")
+                } else {
+                    $('#title .btn').find('i').attr("class", "far fa-hand-point-down")
+                }
+
+            })
+
+        //이미지 슬라이드 (슬릭 이니셜라이즈 복붙)
         $('.slider').slick({
             dots: true,
         });
+    </script>
+
     </script>
 </body>
 
