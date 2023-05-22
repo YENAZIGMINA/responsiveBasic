@@ -445,6 +445,7 @@ nav>div ul li a:hover::after {
 
 /* col7 카드 */
 .card {
+    position: relative;
     perspective: 600px;
     /* 원근감 조절 (최소 600px)그 아래는 너무 화면에 돌출됨 */
 }
@@ -452,10 +453,194 @@ nav>div ul li a:hover::after {
     transform: rotateY(0deg);
     transform-style: preserve-3d;
     backface-visibility: hidden; /* 뒷면:숨기기 */
+    position: relative; /* ❗다른 것 영향안주고 포지션줄때 relative */
+    z-index: 2; /* ❗position 있어야 z-index 적용됨 */
+    transition: 0.5s;
 }
 .card .front img {}
-.card .back {}
-.card .back i {}
+.card .back {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #4038dc;
+    transform: rotateY(-180deg);
+    z-index: 1;
+    backface-visibility: hidden;
+    transition: 0.5s;
+}
+.card .back i {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    font-size: 45px;
+}
+.card:hover .front {
+    transform: rotateY(180deg);
+}
+.card:hover .back {
+    transform: rotateY(0deg);
+    z-index: 2;
+}
+
+/* col.8 card2 */
+.card2 {
+    position: relative;
+    perspective: 600px; /* 원근감 */
+}
+
+.card2 figure {
+    transform-style: preserve-3d;
+}
+.card2 figure img {}
+.card2 figure figcaption {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) translateZ(100px);
+    width: 60%;
+    background-color: rgba(0,0,0,0.4);
+    color: #fff;
+    text-align: center;
+    padding: 3px 0;
+}
+.card2 figure figcaption h3 {
+    font-family: 'Abel', sans-serif;
+    background-color: rgba(0,0,0,0.4);
+    color: #fff;
+    text-align: center;
+    padding: 3px 0;
+}
+
+.card2 .front {
+    position: relative;
+    z-index: 2;
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+.card2 .back {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+    transform: rotateY(-180deg);
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+
+.card2:hover .front {
+    transform: rotateY(180deg);
+}
+.card2:hover .back {
+    transform: rotateY(0deg);
+    z-index: 2;
+}
+
+
+/* col9. card3 */
+.card3 {
+    position: relative;
+    overflow: hidden;
+}
+.card3 figure {}
+.card3 figure img {}
+.card3 figure figcaption {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(200%,-50%) rotate(180deg);
+    width: 100px; height: 100px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    padding-top: 13%;
+    box-sizing: border-box;
+}
+.card3:hover figure figcaption {
+    transform: translate(-50%,-50%) rotate(0deg);
+}
+.card3 figure figcaption h3 {}
+.card3 figure figcaption h3 em {
+    display: block;
+}
+
+
+
+/* col2 게시판1 */
+.notice1 {position: relative;}
+.notice1 h5 {
+    font-size: 14px;
+    color: #2f7fa6;
+    padding-bottom: 5px;
+}
+.notice1 ul {}
+.notice1 ul li {
+    position: relative;
+    padding-left: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.notice1 ul li::after {
+    content: '';
+    position: absolute;
+    top: 8px; left: 0;
+    width: 3px; height: 3px;
+    background-color: #449ce2;
+}
+.notice1 ul li a {}
+
+.notice1 .more {
+    position: absolute;
+    top: 2px; right: 8px;
+    color: #878787;
+    font-size: 11px;
+}
+.notice1 .more i {
+    display: inline-block;
+    padding-left: 3px;
+}
+
+/* col2 게시판2 */
+.notice2 {position: relative;}
+.notice2 h5 {
+    font-size: 14px;
+    color: #2f7fa6;
+    margin-top: 15px;
+}
+.notice2 ul {}
+.notice2 ul li {
+    position: relative;
+    padding-left: 8px;
+    /* ❗2줄 이상일 때 말줄임말❗ */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* 줄별로 숫자 바꾸기 */
+    padding-bottom: 5px;
+    height: 40px; /* pb주니 숨겨져 있던 말줄임말 나와서 억지로 높이값 설정함 */
+}
+.notice2 ul li::after {
+    content: '';
+    position: absolute;
+    top: 8px; left: 0;
+    width: 3px; height: 3px;
+    background-color: #449ce2;
+}
+.notice2 ul li a {}
+.notice2 .more{
+    position: absolute;
+    top: 2px; right: 8px;
+    color: #878787;
+    font-size: 11px;
+}
+.notice2 .more i {
+    display: inline-block;
+    padding-left: 2px;
+}
+
 
 
 
